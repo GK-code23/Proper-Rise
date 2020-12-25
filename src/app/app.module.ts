@@ -23,7 +23,12 @@ import {
 
 import{AngularFireModule} from '@angular/fire'
 import{AngularFireDatabaseModule} from '@angular/fire/database'
-import{environment} from '../environments/environment'
+import{environment} from '../environments/environment';
+import { QuestionsComponent } from './questions/questions.component'
+import { AngularFireStorageModule } from '@angular/fire/storage';
+
+
+
 
 @NgModule({
   declarations: [
@@ -34,15 +39,25 @@ import{environment} from '../environments/environment'
     HomeComponent,
     AddressComponent,
     AboutComponent,
-    LoginComponent
+    LoginComponent,
+    QuestionsComponent,
+
+    
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireDatabaseModule
-
+    AngularFireDatabaseModule,
+    AngularFireModule.initializeApp({
+      apiKey: "AIzaSyATSz6z0oz0ND00Ugc557v5LjpYSBWQ-kg",
+      authDomain: "rise-5eaa3.firebaseapp.com",
+      storageBucket: "rise-5eaa3.appspot.com",
+      projectId: "rise-5eaa3",
+    }),
+    AngularFireStorageModule
   ],
   providers: [AddressService],
   bootstrap: [AppComponent]

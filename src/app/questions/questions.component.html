@@ -1,0 +1,103 @@
+<div class="card-header">
+  <h1>Question</h1> 
+</div>
+<div class="row">
+  <div class="col-sm-2" >
+    <button aria-pressed="true" class="btn btn-block btn-ghost-primary active" type="button" aria-setsize="40px">Primary</button>
+    <button aria-pressed="true" class="btn btn-block btn-ghost-primary active" type="button" aria-setsize="40px">Primary</button>
+    <button aria-pressed="true" class="btn btn-block btn-ghost-primary active" type="button" aria-setsize="40px">Primary</button>
+    <button aria-pressed="true" class="btn btn-block btn-ghost-primary active" type="button" aria-setsize="40px">Primary</button>
+  </div>
+<div class="col-sm-5">
+            <div class="card">
+              <div class="card-header">
+                 Question 
+              </div>
+              <div class="card-body">
+                <form  >
+                  <div class="form-group">
+                    <label for="ccmonth">Domain Type : </label>
+                    <select class="form-control" id="ccmonth" required #domain>
+                      <option>Apptitute</option>
+                      <option>Technical</option>
+                      <option>Verbal</option>
+                      
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="ccmonth" >Difficulty Level : </label>
+                    <select class="form-control" id="ccmonth" required #Level>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                      <option>6</option>
+                      <option>7</option>
+                      <option>8</option>
+                      <option>9</option>
+                      <option>10</option>
+                    </select>
+                  </div>
+                  
+
+                  <div class="form-group">
+                    Enter The Question :
+                    <div class="input-group">
+              
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"></span>
+                      </div>
+                      <input type="text" name="Question" placeholder="Enter the Question" class="form-control" required #question>
+                    </div>
+                  </div>
+                  
+                  
+                  
+                  <form #addressForm="ngForm"  >
+                    
+                          
+                        <section  *ngFor="let address of addresses; let i = index;">
+                          <div class="row">
+                            <div class="col-6">
+                                <h6>Option {{i + 1}} :</h6>
+                            </div>
+                            <div class="col-6 text-right">
+                                
+                            </div>
+                          </div>
+                          
+                          
+                          <div class="row">
+                            <div class="col-7">
+                                <div class="form-group">
+                                <input type="text" class="form-control" [(ngModel)]="address.option" name="option{{address.option}}" placeholder="Option"/>
+                                    
+                                  </div>
+                                  
+                            </div>
+                            <div class="form-check">
+                              <label class="form-check-label">
+                                <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option" aria-label="...">Answer
+                              </label>
+                            </div>
+                            
+                          </div>
+                          <button type="button"  class="btn btn-danger btn-sm" (click)="removeAddress(i)">Remove Option</button>
+                        </section>
+                  
+                        <div class="row-7">
+                          <br>    
+                    <button type="button" class="btn btn-primary mb-2" (click)="addAddress()">Add Option</button>
+                    </div>
+                  </form>
+                  <div class="form-group form-actions">
+                    <br>
+                    <button type="submit" (click)="onAddData(domain.value,Level.value,question.value)" class="btn btn-sm btn-success">Submit</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
