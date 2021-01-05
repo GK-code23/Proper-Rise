@@ -35,6 +35,7 @@ export class UploaderComponent implements OnInit{
     for (let i = 0; i < files.length; i++) {
       this.files.push(files.item(i));
     }
+    this.ngOnInit()
   }
 
 
@@ -47,9 +48,9 @@ export class UploaderComponent implements OnInit{
     console.log(this.storages)
   }
 
-  deleteData(address : []){
+  deleteData(address : [],i:number){
     this.storage.storage.refFromURL(address['downloadURL']).delete()
     this.db.firestore.collection('files').doc(address['id']).delete()
-    
+    this.storages.splice(i,1)
   }
 }

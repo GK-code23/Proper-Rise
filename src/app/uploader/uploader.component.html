@@ -69,11 +69,11 @@
         
             </tr>
           </thead>
-              <tr *ngFor="let address of storages">
+              <tr *ngFor="let address of storages; let i = index;">
         
                 <!-- <td>{{address.id}}</td> -->
                 <td>{{address.name}}</td>
-                <td><button (click)="deleteData(address)">Delete</button></td>
+                <td><button (click)="deleteData(address,i)">Delete</button></td>
         
         
         

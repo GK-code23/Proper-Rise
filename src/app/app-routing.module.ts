@@ -7,8 +7,15 @@ import {LoginComponent} from './login/login.component'
 import { QuestionsComponent } from './questions/questions.component';
 import {UploaderComponent} from './uploader/uploader.component';
 import {EditQuestionComponent} from './edit-question/edit-question.component'
-
+import {QuestionListComponent} from './question-list/question-list.component'
 const routes: Routes = [
+  {
+    path: 'question_list',
+    component:QuestionListComponent,
+    data:{
+      title:'Upload'
+    }
+  },
   {
     path: 'uploader',
     component:UploaderComponent,

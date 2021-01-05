@@ -30,6 +30,7 @@ import { DropzoneDirective } from './dropzone.directive';
 import { UploaderComponent } from './uploader/uploader.component';
 import { UploadTaskComponent } from './upload-task/upload-task.component';
 import { EditQuestionComponent } from './edit-question/edit-question.component';
+import { QuestionListComponent } from './question-list/question-list.component';
 
 
 
@@ -50,6 +51,7 @@ import { EditQuestionComponent } from './edit-question/edit-question.component';
     UploaderComponent,
     UploadTaskComponent,
     EditQuestionComponent,
+    QuestionListComponent,
  
 
     

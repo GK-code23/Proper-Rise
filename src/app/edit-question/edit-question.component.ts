@@ -10,13 +10,7 @@ export class EditQuestionComponent implements OnInit {
   constructor(public fireStore : AngularFirestore) { }
 
   ngOnInit(): void {
-    
-  }
-  
-  
-  savedata(){
-    var value = this.fireStore.collection('Questions').snapshotChanges()._subscribe
-   console.log(value['Answer'])
+      
   }
 
 }

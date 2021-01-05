@@ -33,7 +33,8 @@ export class QuestionsComponent{
     }
     console.log(data)
     console.log(this.answer)
-    this.fireStore.collection('Questions').add(data)    
+    var unique = (await (await this.fireStore.collection('Questions').add(data)).get()).id
+    this.fireStore.collection('Questions').doc(unique).update({'id':unique})    
     
   }
   
