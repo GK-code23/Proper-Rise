@@ -10,13 +10,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class UploaderComponent implements OnInit{
   constructor(private router: Router,private storage: AngularFireStorage, private db: AngularFirestore){
-    this.db.firestore.collection('files').get().then((querySnap) =>{
-      querySnap.forEach((doc) =>{
-        
-        this.storages.push(doc.data())
-        console.log(doc.data())
-      })
-    })
+    
   }
   isHovering: boolean;
 
@@ -24,13 +18,13 @@ export class UploaderComponent implements OnInit{
   storages = [];
   array1 = []
   ngOnInit(){
-      // this.db.firestore.collection('files').get().then((querySnap) =>{
-      //   querySnap.forEach((doc) =>{
+      this.db.firestore.collection('files').get().then((querySnap) =>{
+        querySnap.forEach((doc) =>{
           
-      //     this.storages.push(doc.data())
-      //     console.log(doc.data())
-      //   })
-      // })
+          this.storages.push(doc.data())
+          console.log(doc.data())
+        })
+      })
   }
 
   toggleHover(event: boolean) {
