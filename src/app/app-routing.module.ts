@@ -5,11 +5,24 @@ import {AddressComponent} from './address/address.component'
 import {AboutComponent} from './about/about.component'
 import {LoginComponent} from './login/login.component'
 import { QuestionsComponent } from './questions/questions.component';
-
+import {UploaderComponent} from './uploader/uploader.component';
+import {EditQuestionComponent} from './edit-question/edit-question.component'
 
 const routes: Routes = [
-
-  
+  {
+    path: 'uploader',
+    component:UploaderComponent,
+    data:{
+      title:'Upload'
+    }
+  },
+  {
+    path: 'edit_questions',
+    component:EditQuestionComponent,
+    data:{
+      title:'Upload'
+    }
+  },
   
   {
     path: 'questions',
@@ -20,7 +33,7 @@ const routes: Routes = [
   },
   
   {
-    path: 'login',
+    path: '',
     component: LoginComponent,
     data: {
       title: 'Login Page'

@@ -33,7 +33,7 @@ export class AddressComponent implements OnInit {
 
   saveData(){
     console.log("saving Data")
-    console.log(this.formData)
+    
     if (this.formData.id==null)
     {
       this.addresService.saveAddress(this.formData)
